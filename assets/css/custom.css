@@ -1,23 +1,23 @@
-/* Video Banner Container */
 .video-banner {
   position: relative;
-  height: 100vh; /* Full screen */
+  height: 100vh;
   overflow: hidden;
   background: #000;
 }
 
-/* Background video full cover */
+/* Improved full screen video compatibility */
 .video-banner .bg-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center center;
   z-index: 0;
 }
 
-/* Text content over video */
+/* Content over video */
 .video-banner .inner {
   position: relative;
   z-index: 1;
@@ -25,11 +25,32 @@
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
-/* Optional: logo styling */
+/* Optional: logo */
 .video-banner .logo {
   font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+/* --- Mobile-specific adjustments --- */
+@media (max-width: 768px) {
+  .video-banner {
+    height: 50vh;
+  }
+
+  .video-banner .bg-video {
+    object-fit: contain;
+    background-color: black;
+  }
+
+  .video-banner .inner {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .video-banner .logo {
+    font-size: 2rem;
+  }
 }
