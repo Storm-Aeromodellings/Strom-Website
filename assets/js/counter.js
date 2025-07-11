@@ -5,7 +5,7 @@ function animateHours(id, target) {
    const update = () => {
      if (count < target) {
        count++;
-       el.innerText = count + '+ Hours';
+       el.innerText = count + '+';
        setTimeout(update, speed);
      }
    };
@@ -25,7 +25,7 @@ function animateHours(id, target) {
    const update = () => {
      if (count < target) {
        count++;
-       el.innerText = count + '+ Flights';
+       el.innerText = count + '+';
        setTimeout(update, speed);
      }
    };
